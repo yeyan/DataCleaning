@@ -73,8 +73,7 @@ get_data()
 # Load and clean data
 df <- load_data()
 
-# Save merged data to a CSV file
-write.csv(df, 'MergedData.csv', row.names=FALSE)
+write.table(names(df), file='CodeBook.txt', row.names=F)
 
 # Prepare another DataFrame memtioned in requirement 6
 another_df <- df %>% 
@@ -82,5 +81,5 @@ another_df <- df %>%
     summarize_each(funs(mean)) %>%
     arrange(Activity, Subject)
 
-# Write the aggregated data to CSV
-write.csv(another_df, 'AggregatedMeanByActivityAndSubject.csv', row.names=FALSE)
+# Write the aggregated data to disk as required
+write.table(another_df, file='result.txt', row.names=FALSE)

@@ -2,7 +2,7 @@ library(files, unzip)
 library(dplyr)
 
 get_data <- function() {
-    # If folder UCI HAR Dataset does not exist then try to unpack it, 
+    # If folder 'UCI HAR Dataset' does not exist then try to unpack it, 
     # if data.zip does not exist then download from supplied URI.
     if(!file.exists('UCI HAR Dataset')) {
         if(!file.exists('data.zip')) {
